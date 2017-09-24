@@ -1,3 +1,3 @@
 ## Welcome to GitHub Pages
  
-[link](https://jingqiyu.github.io/gc)
+[javaGC机制学习01](https://jingqiyu.github.io/gc)
