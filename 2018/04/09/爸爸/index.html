@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jingqiyu.github.io">
-  <title>NIO学习04Selector | 星辰大海</title>
+  <title>爸爸 | 星辰大海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重要组成部分SelectorSelector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。 为什么使用Selector?仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切">
-<meta name="keywords" content="java">
+  <meta name="description" content="我可以大声爱你吗？我的爸爸从小我的记忆力很好，总是能在考试中拔得头筹，拿到令人欢喜的成绩。老师喜欢，父母疼爱。">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NIO学习04Selector">
-<meta property="og:url" content="https://jingqiyu.github.io/2017/10/09/NIO学习04Selector/index.html">
+<meta property="og:title" content="爸爸">
+<meta property="og:url" content="https://jingqiyu.github.io/2018/04/09/爸爸/index.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="重要组成部分SelectorSelector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。 为什么使用Selector?仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切">
+<meta property="og:description" content="我可以大声爱你吗？我的爸爸从小我的记忆力很好，总是能在考试中拔得头筹，拿到令人欢喜的成绩。老师喜欢，父母疼爱。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-08T08:52:12.856Z">
+<meta property="og:updated_time" content="2018-04-09T04:02:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NIO学习04Selector">
-<meta name="twitter:description" content="重要组成部分SelectorSelector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。 为什么使用Selector?仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切">
+<meta name="twitter:title" content="爸爸">
+<meta name="twitter:description" content="我可以大声爱你吗？我的爸爸从小我的记忆力很好，总是能在考试中拔得头筹，拿到令人欢喜的成绩。老师喜欢，父母疼爱。">
   
     <link rel="alternative" href="/atom.xml" title="星辰大海" type="application/atom+xml">
   
@@ -159,76 +159,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-NIO学习04Selector" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-爸爸" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      NIO学习04Selector
+      爸爸
     </h1>
   
 
         
-        <a href="/2017/10/09/NIO学习04Selector/" class="archive-article-date">
-  	<time datetime="2017-10-09T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-09</time>
+        <a href="/2018/04/09/爸爸/" class="archive-article-date">
+  	<time datetime="2018-04-09T03:59:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="重要组成部分Selector"><a href="#重要组成部分Selector" class="headerlink" title="重要组成部分Selector"></a>重要组成部分Selector</h1><p>Selector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。</p>
-<h2 id="为什么使用Selector"><a href="#为什么使用Selector" class="headerlink" title="为什么使用Selector?"></a>为什么使用Selector?</h2><p>仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切换的开销很大，而且每个线程都要占用系统的一些资源（如内存）。因此，使用的线程越少越好。</p>
-<p>下面是单线程使用一个Selector处理3个channel的示例</p>
-<p><strong>创建</strong></p>
-<p>首先我们需要创建一个Selector.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br></pre></td></tr></table></figure>
-<p>我们通过Selector的一个静态方法得到了一个Selector实例.接下来我们向他注册Channel的实例.</p>
-<p><strong>注册</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">channel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">SelectionKey key = channel.register(selector,</span><br><span class="line">	Selectionkey.OP_READ);</span><br></pre></td></tr></table></figure>
-<p>与Selector一起使用时，Channel必须处于非阻塞模式下。<strong>这意味着不能将FileChannel与Selector一起使用，因为FileChannel不能切换到非阻塞模式。而套接字通道都可以。</strong></p>
-<p>注意register()方法的第二个参数。这是一个“interest集合”，意思是在通过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件：</p>
-<ul>
-<li>Connect (SelectionKey.OP_CONNECT)</li>
-<li>Accept (SelectionKey.OP_ACCEPT)</li>
-<li>Read (SelectionKey.OP_READ)</li>
-<li>Write (SelectionKey.OP_WRITE)</li>
-</ul>
-<p>如果你对不止一种事件感兴趣，那么可以用“位或”操作符将常量连接起来</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure>
-<p><strong>SelectionKey</strong><br>当我们完成注册我们就得到一个<strong>SelectionKey</strong>实例。</p>
-<p>SelectionKey中包含了如下内容</p>
-<ul>
-<li>interest集合</li>
-<li>ready集合</li>
-<li>Channel</li>
-<li>Selector</li>
-<li>附加的对象（可选）</li>
-</ul>
-<p><strong>interest集合</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int interestSet = selectionKey.interestOps();</span><br><span class="line"></span><br><span class="line">boolean isInterestedInAccept  = (interestSet &amp; SelectionKey.OP_ACCEPT) == SelectionKey.OP_ACCEPT；</span><br><span class="line">boolean isInterestedInConnect = interestSet &amp; SelectionKey.OP_CONNECT;</span><br><span class="line">boolean isInterestedInRead    = interestSet &amp; SelectionKey.OP_READ;</span><br><span class="line">boolean isInterestedInWrite   = interestSet &amp; SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure>
-<p>我们可以通过interestOps方法能够得到一个整型数字. 再通过位运算得到一个是否感兴趣的bool值。</p>
-<p><strong>ready集合</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">selectionKey.isAcceptable();</span><br><span class="line">selectionKey.isConnectable();</span><br><span class="line">selectionKey.isReadable();</span><br><span class="line">selectionKey.isWritable();</span><br></pre></td></tr></table></figure>
-<p>我们可以直接通过这些方法，拿到已经就绪的某些状态，这些方法将返回一个bool型</p>
-<p>还可以通过他直接获取对应的Channel和Selector</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Channel  channel  = selectionKey.channel();</span><br><span class="line">Selector selector = selectionKey.selector();</span><br></pre></td></tr></table></figure>
-<h2 id="通过Selector选择通道"><a href="#通过Selector选择通道" class="headerlink" title="通过Selector选择通道"></a>通过Selector选择通道</h2><p>一旦向Selector注册了一或多个通道，就可以调用几个重载的select()方法。这些方法返回你所感兴趣的事件（如连接、接受、读或写）已经准备就绪的那些通道。换句话说，如果你对“读就绪”的通道感兴趣，select()方法会返回读事件已经就绪的那些通道。</p>
-<p>select()阻塞到至少有一个通道在你注册的事件上就绪了。</p>
-<p>select(long timeout)和select()一样，除了最长会阻塞timeout毫秒(参数)。</p>
-<p>selectNow()不会阻塞，不管什么通道就绪都立刻返回（译者注：此方法执行非阻塞的选择操作。如果自从前一次选择操作后，没有通道变成可选择的，则此方法直接返回零。）。</p>
-<p>select()方法返回的int值表示有多少通道已经就绪。亦即，自上次调用select()方法后有多少通道变成就绪状态。如果调用select()方法，因为有一个通道变成就绪状态，返回了1，若再次调用select()方法，如果另一个通道就绪了，它会再次返回1。如果对第一个就绪的channel没有做任何操作，现在就有两个就绪的通道，但在每次select()方法调用之间，只有一个通道就绪了。</p>
-<p>一旦调用了select()方法，并且返回值表明有一个或更多个通道就绪了，然后可以通过调用selector的selectedKeys()方法，访问“已选择键集（selected key set）”中的就绪通道。如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set selectedKeys = selector.selectedKeys();</span><br></pre></td></tr></table></figure>
-<p><strong>wake up</strong></p>
-<p>某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。</p>
-<p>如果有其它线程调用了wakeup()方法，但当前没有线程阻塞在select()方法上，下个调用select()方法的线程会立即“醒来（wake up）”。</p>
-<p><strong>close()</strong></p>
-<p>用完Selector后调用其close()方法会关闭该Selector，且使注册到该Selector上的所有SelectionKey实例无效。通道本身并不会关闭。</p>
-<p>最后我们看一段完整的实例代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br><span class="line">channel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">SelectionKey key = channel.register(selector, SelectionKey.OP_READ);</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">  <span class="keyword">int</span> readyChannels = selector.select();</span><br><span class="line">  <span class="keyword">if</span>(readyChannels == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">  Set selectedKeys = selector.selectedKeys();</span><br><span class="line">  Iterator keyIterator = selectedKeys.iterator();</span><br><span class="line">  <span class="keyword">while</span>(keyIterator.hasNext()) &#123;</span><br><span class="line">    SelectionKey key = keyIterator.next();</span><br><span class="line">    <span class="keyword">if</span>(key.isAcceptable()) &#123;</span><br><span class="line">        <span class="comment">// a connection was accepted by a ServerSocketChannel.</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isConnectable()) &#123;</span><br><span class="line">        <span class="comment">// a connection was established with a remote server.</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isReadable()) &#123;</span><br><span class="line">        <span class="comment">// a channel is ready for reading</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isWritable()) &#123;</span><br><span class="line">        <span class="comment">// a channel is ready for writing</span></span><br><span class="line">    &#125;</span><br><span class="line">    keyIterator.remove();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="我可以大声爱你吗？我的爸爸"><a href="#我可以大声爱你吗？我的爸爸" class="headerlink" title="我可以大声爱你吗？我的爸爸"></a>我可以大声爱你吗？我的爸爸</h4><pre><code>从小我的记忆力很好，总是能在考试中拔得头筹，拿到令人欢喜的成绩。老师喜欢，父母疼爱。
+</code></pre><a id="more"></a> 
+
       
 
       
@@ -262,7 +215,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -318,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://jingqiyu.github.io/2017/10/09/NIO学习04Selector/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://jingqiyu.github.io/2018/04/09/爸爸/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/13/JavaString/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          String,StringBuffer,StringBuilder
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/09/NIO学习02Buffer/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NIO学习02Buffer</div>
+    <a href="/2018/04/08/NIO学习05非阻塞式服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

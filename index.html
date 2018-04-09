@@ -159,6 +159,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-爸爸" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/爸爸/">爸爸</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/09/爸爸/" class="archive-article-date">
+  	<time datetime="2018-04-09T03:59:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="我可以大声爱你吗？我的爸爸"><a href="#我可以大声爱你吗？我的爸爸" class="headerlink" title="我可以大声爱你吗？我的爸爸"></a>我可以大声爱你吗？我的爸爸</h4><pre><code>从小我的记忆力很好，总是能在考试中拔得头筹，拿到令人欢喜的成绩。老师喜欢，父母疼爱。
+</code></pre>
+        
+          <a class="article-more-a" href="/2018/04/09/爸爸/#more">Read More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/09/爸爸/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-NIO学习05非阻塞式服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -571,172 +648,6 @@
 
 
   
-    <article id="post-NIO学习01概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/09/NIO学习01概述/">NIO学习01概述</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/09/NIO学习01概述/" class="archive-article-date">
-  	<time datetime="2017-10-09T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么JAVA-NIO"><a href="#什么JAVA-NIO" class="headerlink" title="什么JAVA NIO"></a>什么JAVA NIO</h2><p>先来看看什么是IO。<br>I/O即输入输出，是计算机与外界世界的一个借口。IO操作的实际主题是操作系统。在java编程中，一般使用流的方式来处理IO，所有的IO都被视作是单个字节的移动，通过stream对象一次移动一个字节。流IO负责把对象转换为字节，然后再转换为对象。</p>
-<p>那么什么又是NIO呢?</p>
-<p>java.nio全称java non-blocking IO，是指jdk1.4 及以上版本里提供的新api（New IO） ，为所有的原始类型（boolean类型除外）提供缓存支持的数据容器，使用它可以提供非阻塞式的高伸缩性网络。<strong>NIO主要用到的是块</strong>，所以NIO的效率要比IO高很多。</p>
-<p>NIO和传统IO（一下简称IO）之间第一个最大的区别是，IO是面向<strong>流</strong>的，NIO是面向<strong>缓冲区</strong>的。 Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方。此外，它不能前后移动流中的数据。如果需要前后移动从流中读取的数据，需要先将它缓存到一个缓冲区。NIO的缓冲导向方法略有不同。数据读取到一个它稍后处理的缓冲区，需要时可在缓冲区中前后移动。这就增加了处理过程中的灵活性。但是，还需要检查是否该缓冲区中包含所有您需要处理的数据。而且，需确保当更多的数据读入缓冲区时，不要覆盖缓冲区里尚未处理的数据。</p>
-<p>IO的各种流是阻塞的。这意味着，当一个线程调用read() 或 write()时，该线程被阻塞，直到有一些数据被读取，或数据完全写入。该线程在此期间不能再干任何事情了。 NIO的非阻塞模式，使一个线程从某通道发送请求读取数据，但是它仅能得到目前可用的数据，如果目前没有数据可用时，就什么都不会获取。而不是保持线程阻塞，所以直至数据变的可以读取之前，该线程可以继续做其他的事情。 非阻塞写也是如此。一个线程请求写入一些数据到某通道，但不需要等待它完全写入，这个线程同时可以去做别的事情。 线程通常将非阻塞IO的空闲时间用于在其它通道上执行IO操作，所以一个单独的线程现在可以管理多个输入和输出通道（channel）。</p>
-        
-          <a class="article-more-a" href="/2017/10/09/NIO学习01概述/#more">Read More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/09/NIO学习01概述/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-NIO学习02Buffer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/09/NIO学习02Buffer/">NIO学习02Buffer</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/09/NIO学习02Buffer/" class="archive-article-date">
-  	<time datetime="2017-10-09T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考文章 </p>
-<p><a href="http://ifeve.com/buffers/" target="_blank" rel="noopener">Java NIO 教程buffer</a></p>
-<p><a href="http://zachary-guo.iteye.com/blog/1457542" target="_blank" rel="noopener">详尽的Buffer机制</a></p>
-<h2 id="什么是buffer"><a href="#什么是buffer" class="headerlink" title="什么是buffer"></a>什么是buffer</h2><p>Buffer从本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被封装成了 NIO Buffer 对象。并提供了一组方法，方便用来访问该快内存。</p>
-<h2 id="Buffer的基本用法"><a href="#Buffer的基本用法" class="headerlink" title="Buffer的基本用法"></a>Buffer的基本用法</h2><p>一般遵照如下步骤</p>
-<ol>
-<li>写入数据到buffer</li>
-<li>调用flip()方法</li>
-<li>从buffer中读取数据</li>
-<li>调用clear()或者compact()</li>
-</ol>
-        
-          <a class="article-more-a" href="/2017/10/09/NIO学习02Buffer/#more">Read More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/09/NIO学习02Buffer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-NIO学习04Selector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -859,6 +770,92 @@
 
 
   
+    <article id="post-NIO学习02Buffer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/09/NIO学习02Buffer/">NIO学习02Buffer</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/09/NIO学习02Buffer/" class="archive-article-date">
+  	<time datetime="2017-10-09T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考文章 </p>
+<p><a href="http://ifeve.com/buffers/" target="_blank" rel="noopener">Java NIO 教程buffer</a></p>
+<p><a href="http://zachary-guo.iteye.com/blog/1457542" target="_blank" rel="noopener">详尽的Buffer机制</a></p>
+<h2 id="什么是buffer"><a href="#什么是buffer" class="headerlink" title="什么是buffer"></a>什么是buffer</h2><p>Buffer从本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被封装成了 NIO Buffer 对象。并提供了一组方法，方便用来访问该快内存。</p>
+<h2 id="Buffer的基本用法"><a href="#Buffer的基本用法" class="headerlink" title="Buffer的基本用法"></a>Buffer的基本用法</h2><p>一般遵照如下步骤</p>
+<ol>
+<li>写入数据到buffer</li>
+<li>调用flip()方法</li>
+<li>从buffer中读取数据</li>
+<li>调用clear()或者compact()</li>
+</ol>
+        
+          <a class="article-more-a" href="/2017/10/09/NIO学习02Buffer/#more">Read More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/09/NIO学习02Buffer/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-NIO学习03分散与聚集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -936,35 +933,33 @@
 
 
   
-    <article id="post-线程池学习01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-NIO学习01概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/线程池学习01/">线程池学习011</a>
+      <a class="article-title" href="/2017/10/09/NIO学习01概述/">NIO学习01概述</a>
     </h1>
   
 
         
-        <a href="/2017/09/29/线程池学习01/" class="archive-article-date">
-  	<time datetime="2017-09-29T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+        <a href="/2017/10/09/NIO学习01概述/" class="archive-article-date">
+  	<time datetime="2017-10-09T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="http://blog.csdn.net/u011531613/article/details/61921473" target="_blank" rel="noopener">一篇很不错的文章</a></p>
-</blockquote>
-<h3 id="线程池根本-Java中的ThreadPoolExecutor类"><a href="#线程池根本-Java中的ThreadPoolExecutor类" class="headerlink" title="线程池根本 Java中的ThreadPoolExecutor类"></a>线程池根本 Java中的ThreadPoolExecutor类</h3><p>java.uitl.concurrent.ThreadPoolExecutor类是线程池中最核心的一个类，因此如果要透彻地了解Java中的线程池，必须先了解这个类。下面我们来看一下ThreadPoolExecutor类的具体实现源码。</p>
-<p>先来看下很多代码中出现的 Executors.newFixedThreadPool(5); 中做了什么.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ExecutorService <span class="title">newFixedThreadPool</span><span class="params">(<span class="keyword">int</span> nThreads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ThreadPoolExecutor(nThreads, nThreads,</span><br><span class="line">                                  <span class="number">0L</span>, TimeUnit.MILLISECONDS,</span><br><span class="line">                                  <span class="keyword">new</span> LinkedBlockingQueue&lt;Runnable&gt;());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到实际是调用了ThreadPoolExecutor的一个构造函数 返回了一个ThreadPoolExecutor的实例.</p>
+        <h2 id="什么JAVA-NIO"><a href="#什么JAVA-NIO" class="headerlink" title="什么JAVA NIO"></a>什么JAVA NIO</h2><p>先来看看什么是IO。<br>I/O即输入输出，是计算机与外界世界的一个借口。IO操作的实际主题是操作系统。在java编程中，一般使用流的方式来处理IO，所有的IO都被视作是单个字节的移动，通过stream对象一次移动一个字节。流IO负责把对象转换为字节，然后再转换为对象。</p>
+<p>那么什么又是NIO呢?</p>
+<p>java.nio全称java non-blocking IO，是指jdk1.4 及以上版本里提供的新api（New IO） ，为所有的原始类型（boolean类型除外）提供缓存支持的数据容器，使用它可以提供非阻塞式的高伸缩性网络。<strong>NIO主要用到的是块</strong>，所以NIO的效率要比IO高很多。</p>
+<p>NIO和传统IO（一下简称IO）之间第一个最大的区别是，IO是面向<strong>流</strong>的，NIO是面向<strong>缓冲区</strong>的。 Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方。此外，它不能前后移动流中的数据。如果需要前后移动从流中读取的数据，需要先将它缓存到一个缓冲区。NIO的缓冲导向方法略有不同。数据读取到一个它稍后处理的缓冲区，需要时可在缓冲区中前后移动。这就增加了处理过程中的灵活性。但是，还需要检查是否该缓冲区中包含所有您需要处理的数据。而且，需确保当更多的数据读入缓冲区时，不要覆盖缓冲区里尚未处理的数据。</p>
+<p>IO的各种流是阻塞的。这意味着，当一个线程调用read() 或 write()时，该线程被阻塞，直到有一些数据被读取，或数据完全写入。该线程在此期间不能再干任何事情了。 NIO的非阻塞模式，使一个线程从某通道发送请求读取数据，但是它仅能得到目前可用的数据，如果目前没有数据可用时，就什么都不会获取。而不是保持线程阻塞，所以直至数据变的可以读取之前，该线程可以继续做其他的事情。 非阻塞写也是如此。一个线程请求写入一些数据到某通道，但不需要等待它完全写入，这个线程同时可以去做别的事情。 线程通常将非阻塞IO的空闲时间用于在其它通道上执行IO操作，所以一个单独的线程现在可以管理多个输入和输出通道（channel）。</p>
         
-          <a class="article-more-a" href="/2017/09/29/线程池学习01/#more">Read More >></a>
+          <a class="article-more-a" href="/2017/10/09/NIO学习01概述/#more">Read More >></a>
         
       
 
@@ -988,7 +983,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/线程池学习01/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/09/NIO学习01概述/">展开全文 >></a>
         </p>
       
 
@@ -1020,7 +1015,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

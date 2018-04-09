@@ -159,6 +159,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-线程池学习01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/29/线程池学习01/">线程池学习011</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/29/线程池学习01/" class="archive-article-date">
+  	<time datetime="2017-09-29T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="http://blog.csdn.net/u011531613/article/details/61921473" target="_blank" rel="noopener">一篇很不错的文章</a></p>
+</blockquote>
+<h3 id="线程池根本-Java中的ThreadPoolExecutor类"><a href="#线程池根本-Java中的ThreadPoolExecutor类" class="headerlink" title="线程池根本 Java中的ThreadPoolExecutor类"></a>线程池根本 Java中的ThreadPoolExecutor类</h3><p>java.uitl.concurrent.ThreadPoolExecutor类是线程池中最核心的一个类，因此如果要透彻地了解Java中的线程池，必须先了解这个类。下面我们来看一下ThreadPoolExecutor类的具体实现源码。</p>
+<p>先来看下很多代码中出现的 Executors.newFixedThreadPool(5); 中做了什么.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ExecutorService <span class="title">newFixedThreadPool</span><span class="params">(<span class="keyword">int</span> nThreads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ThreadPoolExecutor(nThreads, nThreads,</span><br><span class="line">                                  <span class="number">0L</span>, TimeUnit.MILLISECONDS,</span><br><span class="line">                                  <span class="keyword">new</span> LinkedBlockingQueue&lt;Runnable&gt;());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到实际是调用了ThreadPoolExecutor的一个构造函数 返回了一个ThreadPoolExecutor的实例.</p>
+        
+          <a class="article-more-a" href="/2017/09/29/线程池学习01/#more">Read More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/29/线程池学习01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Spring-ioc学习03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -873,104 +955,9 @@
 
 
   
-    <article id="post-php简单扩展开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/20/php简单扩展开发/">php简单扩展开发</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/20/php简单扩展开发/" class="archive-article-date">
-  	<time datetime="2016-02-20T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>环境 ubuntu 15.04 php源码包  假设路径是 ~/php-5.6.14</li>
-<li>cd   ~/php-5.6.14/ext </li>
-<li>vim hello_module.def  输入函数定义  如 void hello()</li>
-<li>./ext_skel –extname= hello_module–proto= hello_module.def  运行</li>
-<li>cd hello_module</li>
-<li><p>将<br><img src="https://wx4.sinaimg.cn/mw690/4d662fa1gy1flruuq2n2pj20jm02owem.jpg" alt="image"><br>下的注释符号 DNL全部删除掉</p>
-</li>
-<li><p>打开 hello_module.c 完成要达到的功能</p>
-</li>
-<li><p>找到phpize 路径 使用命令<br>/usr/localhost/webserver/php/bin/phpize<br>./configure –with-php-config=/usr/localhost/webserver/php/bin/php-config 和phpize同一路径</p>
-</li>
-<li><p>make &amp;&amp; make install</p>
-</li>
-<li><p>根据提示 找到生成的hello_module.so文件 </p>
-</li>
-<li><p>建立一个文件夹 保存自己创建好的扩展文件</p>
-</li>
-<li>打开php.ini  找到 extension_dir 定义为你创建好的文件夹</li>
-<li>重启php</li>
-</ol>
-<p><img src="https://wx3.sinaimg.cn/mw690/4d662fa1gy1flruun6lvzj20rm0k2412.jpg" alt="image"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/20/php简单扩展开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
